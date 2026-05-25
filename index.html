@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IIMI Brand Headline Guideline</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --font-primary: "Plus Jakarta Sans", Arial, sans-serif;
+      --font-secondary: "Plus Jakarta Sans", Arial, sans-serif;
+      --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      --font-serif: "Newsreader", "EB Garamond", Georgia, serif;
+
+      --color-bg: #141310;
+      --color-section: #1c1a17;
+      --color-text: #e8e5de;
+      --color-text-95: rgba(232, 229, 222, 0.95);
+      --color-text-85: rgba(232, 229, 222, 0.85);
+      --color-text-55: rgba(232, 229, 222, 0.55);
+      --color-text-45: rgba(232, 229, 222, 0.45);
+      --color-text-40: rgba(232, 229, 222, 0.40);
+      --color-text-35: rgba(232, 229, 222, 0.35);
+      --color-text-30: rgba(232, 229, 222, 0.30);
+      --color-line: rgba(232, 229, 222, 0.08);
+      --color-line-strong: rgba(232, 229, 222, 0.10);
+      --color-red: #cb1313;
+      --color-red-80: rgba(203, 19, 19, 0.80);
+      --color-red-70: rgba(203, 19, 19, 0.70);
+      --color-red-20: rgba(203, 19, 19, 0.20);
+      --color-red-12: rgba(203, 19, 19, 0.12);
+      --color-red-06: rgba(203, 19, 19, 0.09);
+
+      --space-page: 80px;
+      --radius-sm: 2px;
+      --radius-md: 4px;
+      --radius-lg: 6px;
+      --max-width: 1280px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: var(--color-bg);
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--font-primary);
+      font-size: 16px;
+      line-height: 1.5;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    .page {
+      min-height: 100vh;
+    }
+
+    .section {
+      border-bottom: 0.5px solid var(--color-line);
+      padding: 80px var(--space-page);
+    }
+
+    .section.alt {
+      background: var(--color-section);
+    }
+
+    .inner {
+      width: min(100%, var(--max-width));
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--color-text-45);
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 13px;
+      letter-spacing: 1.2px;
+      white-space: nowrap;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 4px;
+      height: 16px;
+      border-radius: 2px;
+      background: var(--color-red);
+    }
+
+    .label {
+      color: var(--color-red-70);
+      font-size: 10px;
+      font-weight: 600;
+      line-height: 12px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      padding-top: var(--space-page);
+    }
+
+    .hero .eyebrow {
+      margin-bottom: 32px;
+    }
+
+    .headline-list {
+      display: grid;
+      gap: 24px;
+      width: min(100%, var(--max-width));
+    }
+
+    .headline-option {
+      display: grid;
+      gap: 8px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--color-line);
+    }
+
+    .headline-option:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .display {
+      max-width: 1280px;
+      color: var(--color-text);
+      font-size: 72px;
+      font-weight: 800;
+      line-height: 79px;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 640px;
+      color: var(--color-text-55);
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 29px;
+    }
+
+    .section-title {
+      color: var(--color-text);
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 39px;
+      letter-spacing: 0;
+    }
+
+    .section-copy {
+      margin-top: 8px;
+      color: var(--color-text-45);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+    }
+
+    .block {
+      margin-top: 40px;
+    }
+
+    .tone-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 2px;
+    }
+
+    .tone-card,
+    .formula-card,
+    .word-card,
+    .token-card {
+      border: 0.5px solid var(--color-line-strong);
+      border-radius: var(--radius-sm);
+      background: var(--color-bg);
+    }
+
+    .tone-card {
+      padding: 28px 24px;
+    }
+
+    .tone-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .icon {
+      display: grid;
+      width: 28px;
+      height: 28px;
+      place-items: center;
+      border-radius: var(--radius-md);
+      background: var(--color-red-12);
+      color: var(--color-red);
+      font-size: 14px;
+      line-height: 14px;
+    }
+
+    .tone-name {
+      color: var(--color-text);
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 22px;
+    }
+
+    .tone-copy {
+      min-height: 44px;
+      color: rgba(232, 229, 222, 0.50);
+      font-size: 14px;
+      line-height: 22px;
+    }
+
+    .example-label {
+      margin-top: 16px;
+      color: var(--color-red-80);
+      font-size: 10px;
+      font-weight: 600;
+      line-height: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .example-label.muted {
+      color: var(--color-text-30);
+    }
+
+    .quote-box {
+      min-height: 70px;
+      margin-top: 8px;
+      padding: 10px 12px;
+      border-radius: var(--radius-sm);
+      background: var(--color-red-06);
+      color: var(--color-text-85);
+      font-size: 13px;
+      line-height: 20px;
+    }
+
+    .quote-box.muted {
+      border: 0.5px solid var(--color-line);
+      background: rgba(232, 229, 222, 0.04);
+      color: var(--color-text-35);
+    }
+
+    .formula-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2px;
+    }
+
+    .formula-card {
+      padding: 28px 24px;
+      background: var(--color-section);
+    }
+
+    .formula-meta {
+      display: flex;
+      gap: 12px;
+      color: var(--color-text-40);
+      font-size: 11px;
+      font-weight: 600;
+      line-height: 13px;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+
+    .formula-meta span:first-child {
+      color: var(--color-red-80);
+    }
+
+    .formula-text {
+      margin-top: 12px;
+      color: var(--color-text-95);
+      font-size: 22px;
+      font-weight: 600;
+      line-height: 30px;
+      letter-spacing: 0;
+    }
+
+    .formula-note {
+      margin-top: 12px;
+      color: var(--color-text-40);
+      font-size: 13px;
+      line-height: 20px;
+    }
+
+    .words-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .logo-card {
+      overflow: hidden;
+      border: 0.5px solid var(--color-line-strong);
+      border-radius: var(--radius-sm);
+      background: var(--color-section);
+    }
+
+    .logo-preview {
+      display: grid;
+      min-height: 220px;
+      place-items: center;
+      padding: 40px;
+      border-bottom: 0.5px solid var(--color-line);
+    }
+
+    .logo-preview.light {
+      background: #f4f3f0;
+    }
+
+    .logo-preview.dark {
+      background: #000000;
+    }
+
+    .logo-preview img {
+      display: block;
+      width: 100%;
+      max-width: 620px;
+      height: auto;
+    }
+
+    .logo-info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .logo-title {
+      color: var(--color-text);
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 22px;
+    }
+
+    .logo-meta {
+      margin-top: 4px;
+      color: var(--color-text-45);
+      font-size: 12px;
+      line-height: 18px;
+      font-family: var(--font-mono);
+    }
+
+    .download-link {
+      display: inline-flex;
+      min-height: 38px;
+      align-items: center;
+      justify-content: center;
+      border: 0.5px solid var(--color-red-20);
+      border-radius: var(--radius-sm);
+      padding: 0 14px;
+      background: var(--color-red-06);
+      color: var(--color-red);
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 18px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .download-link:hover {
+      border-color: var(--color-red-70);
+    }
+
+    .word-card {
+      padding: 28px;
+    }
+
+    .word-card.use {
+      border-color: var(--color-red-20);
+      background: var(--color-red-06);
+    }
+
+    .word-card.avoid {
+      border-color: var(--color-line);
+      background: rgba(232, 229, 222, 0.03);
+    }
+
+    .word-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0 24px;
+      margin-top: 20px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .word-list li {
+      position: relative;
+      min-height: 28px;
+      padding-left: 15px;
+      color: var(--color-text-85);
+      font-size: 15px;
+      line-height: 28px;
+    }
+
+    .word-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 11.5px;
+      width: 5px;
+      height: 5px;
+      border-radius: 999px;
+      background: var(--color-red-70);
+    }
+
+    .avoid .word-list li {
+      color: var(--color-text-30);
+      text-decoration: line-through;
+    }
+
+    .avoid .word-list li::before {
+      background: rgba(232, 229, 222, 0.20);
+    }
+
+    .token-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 2px;
+    }
+
+    .token-card {
+      padding: 20px;
+      background: var(--color-section);
+    }
+
+    .swatch {
+      height: 52px;
+      margin-bottom: 16px;
+      border: 0.5px solid var(--color-line);
+      border-radius: var(--radius-sm);
+    }
+
+    .token-name {
+      color: var(--color-text);
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 20px;
+    }
+
+    .token-value {
+      margin-top: 4px;
+      color: var(--color-text-45);
+      font-size: 12px;
+      line-height: 18px;
+      font-family: var(--font-mono);
+    }
+
+    .type-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-top: 0.5px solid var(--color-line);
+      font-size: 13px;
+      line-height: 20px;
+    }
+
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    .table-title {
+      margin: 40px 0 16px;
+      color: var(--color-text);
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 22px;
+    }
+
+    .type-table th,
+    .type-table td {
+      padding: 16px 0;
+      border-bottom: 0.5px solid var(--color-line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .type-table th {
+      color: var(--color-text-40);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .type-table td {
+      color: var(--color-text-85);
+    }
+
+    .type-table td + td,
+    .type-table th + th {
+      padding-left: 24px;
+    }
+
+    .swatch-inline {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      margin-right: 10px;
+      border: 0.5px solid var(--color-line);
+      border-radius: var(--radius-sm);
+      vertical-align: -4px;
+    }
+
+    .type-sample {
+      color: var(--color-text);
+      font-size: 22px;
+      font-weight: 600;
+      line-height: 30px;
+    }
+
+    .font-link {
+      color: var(--color-red);
+      text-decoration: none;
+    }
+
+    .font-link:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 980px) {
+      :root {
+        --space-page: 32px;
+      }
+
+      .display {
+        font-size: 48px;
+        line-height: 54px;
+      }
+
+      .tone-grid,
+      .formula-grid,
+      .words-grid,
+      .logo-grid,
+      .token-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      :root {
+        --space-page: 20px;
+      }
+
+      .section {
+        padding-top: 48px;
+        padding-bottom: 56px;
+      }
+
+      .display {
+        font-size: 38px;
+        line-height: 43px;
+      }
+
+      .lead {
+        font-size: 16px;
+        line-height: 25px;
+      }
+
+      .word-list {
+        grid-template-columns: 1fr;
+      }
+
+      .logo-info {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="section hero">
+      <div class="inner">
+        <p class="eyebrow">Brand Headline Guidelines</p>
+        <div class="headline-list">
+          <article class="headline-option">
+            <p class="label">Option 01 - Primary</p>
+            <h1 class="display">Your data should be<br>working for you.</h1>
+            <p class="lead">We get it. Most organizations are sitting on information they can't use - and it's costing them every day.</p>
+          </article>
+          <article class="headline-option">
+            <p class="label">Option 02 - Problem-first</p>
+            <h1 class="display">Buried, not gone.</h1>
+            <p class="lead">Your records exist. They just can't be found, used, or trusted. We change that.</p>
+          </article>
+          <article class="headline-option">
+            <p class="label">Option 03 - AI-forward</p>
+            <h1 class="display">Before the AI,<br>there is the data.</h1>
+            <p class="lead">Every AI initiative starts with clean, structured, accessible data. IIMI builds that foundation.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="inner">
+        <h2 class="section-title">Voice &amp; Tone</h2>
+        <p class="section-copy">How IIMI sounds. Always direct. Never corporate.</p>
+
+        <div class="block tone-grid">
+          <article class="tone-card">
+            <div class="tone-title">
+              <span class="icon">→</span>
+              <h3 class="tone-name">Direct</h3>
+            </div>
+            <p class="tone-copy">State the problem. State the solution. No fluff.</p>
+            <p class="example-label">Do</p>
+            <p class="quote-box">"Your data should be working for you."</p>
+            <p class="example-label muted">Don't</p>
+            <p class="quote-box muted">"We provide innovative data management solutions."</p>
+          </article>
+
+          <article class="tone-card">
+            <div class="tone-title">
+              <span class="icon">◎</span>
+              <h3 class="tone-name">Human</h3>
+            </div>
+            <p class="tone-copy">Talk to the person, not the enterprise. They feel the pain.</p>
+            <p class="example-label">Do</p>
+            <p class="quote-box">"Right now someone on your team is wasting time."</p>
+            <p class="example-label muted">Don't</p>
+            <p class="quote-box muted">"Organizations face challenges with data utilization."</p>
+          </article>
+
+          <article class="tone-card">
+            <div class="tone-title">
+              <span class="icon">✓</span>
+              <h3 class="tone-name">Confident</h3>
+            </div>
+            <p class="tone-copy">28 years. 7,200 people. Proven track record. Say it plainly.</p>
+            <p class="example-label">Do</p>
+            <p class="quote-box">"We've been doing this since 1996."</p>
+            <p class="example-label muted">Don't</p>
+            <p class="quote-box muted">"We're proud to be a trusted leader in the space."</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="inner">
+        <h2 class="section-title">Headline Formulas</h2>
+        <p class="section-copy">Four patterns that work for IIMI. Use these as starting points.</p>
+
+        <div class="block formula-grid">
+          <article class="formula-card">
+            <p class="formula-meta"><span>01</span><span>Problem → Relief</span></p>
+            <p class="formula-text">"Files buried for years. Searchable by Monday."</p>
+            <p class="formula-note">State the pain. Resolve it with a timeframe.</p>
+          </article>
+          <article class="formula-card">
+            <p class="formula-meta"><span>02</span><span>Observation → Implication</span></p>
+            <p class="formula-text">"Your team is doing this manually. They shouldn't be."</p>
+            <p class="formula-note">Acknowledge what they're already doing. Challenge it.</p>
+          </article>
+          <article class="formula-card">
+            <p class="formula-meta"><span>03</span><span>Honest question</span></p>
+            <p class="formula-text">"Is your data ready for what comes next?"</p>
+            <p class="formula-note">No lecture. Just ask the question they're already asking themselves.</p>
+          </article>
+          <article class="formula-card">
+            <p class="formula-meta"><span>04</span><span>Understatement + precision</span></p>
+            <p class="formula-text">"One error. Every 20,000 records."</p>
+            <p class="formula-note">Confidence through specificity. Let the number speak.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="inner">
+        <h2 class="section-title">Word Bank</h2>
+        <p class="section-copy">The words that carry IIMI's character. And the ones that kill it.</p>
+
+        <div class="block words-grid">
+          <article class="word-card use">
+            <p class="label">Use these</p>
+            <ul class="word-list">
+              <li>activate</li>
+              <li>unlock</li>
+              <li>structure</li>
+              <li>clean up</li>
+              <li>searchable</li>
+              <li>AI-ready</li>
+              <li>process</li>
+              <li>accurate</li>
+              <li>on time</li>
+              <li>we get it</li>
+              <li>working for you</li>
+              <li>what comes next</li>
+              <li>stop managing the mess</li>
+            </ul>
+          </article>
+
+          <article class="word-card avoid">
+            <p class="label" style="color: var(--color-text-30);">Avoid these</p>
+            <ul class="word-list">
+              <li>synergy</li>
+              <li>leverage</li>
+              <li>innovative</li>
+              <li>cutting-edge</li>
+              <li>solutions</li>
+              <li>empower</li>
+              <li>robust</li>
+              <li>seamless</li>
+              <li>state-of-the-art</li>
+              <li>best-in-class</li>
+              <li>transform</li>
+              <li>revolutionize</li>
+              <li>paradigm shift</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="inner">
+        <h2 class="section-title">Logo Assets</h2>
+        <p class="section-copy">Primary IIMI logo files. Download PNG versions directly from this guideline.</p>
+
+        <div class="block logo-grid">
+          <article class="logo-card">
+            <div class="logo-preview light">
+              <img src="assets/iimi-logo-light.png" alt="IIMI logo on light background">
+            </div>
+            <div class="logo-info">
+              <div>
+                <h3 class="logo-title">Logo / Light Background</h3>
+                <p class="logo-meta">PNG · iimi-logo-light.png</p>
+              </div>
+              <a class="download-link" href="assets/iimi-logo-light.png" download="iimi-logo-light.png">Download PNG</a>
+            </div>
+          </article>
+
+          <article class="logo-card">
+            <div class="logo-preview dark">
+              <img src="assets/iimi-logo-dark.png" alt="IIMI logo on dark background">
+            </div>
+            <div class="logo-info">
+              <div>
+                <h3 class="logo-title">Logo / Dark Background</h3>
+                <p class="logo-meta">PNG · iimi-logo-dark.png</p>
+              </div>
+              <a class="download-link" href="assets/iimi-logo-dark.png" download="iimi-logo-dark.png">Download PNG</a>
+            </div>
+          </article>
+
+          <article class="logo-card">
+            <div class="logo-preview dark">
+              <img src="assets/iimi-logo-white.png" alt="IIMI white monochrome logo">
+            </div>
+            <div class="logo-info">
+              <div>
+                <h3 class="logo-title">Logo / White Monochrome</h3>
+                <p class="logo-meta">PNG · iimi-logo-white.png</p>
+              </div>
+              <a class="download-link" href="assets/iimi-logo-white.png" download="iimi-logo-white.png">Download PNG</a>
+            </div>
+          </article>
+
+          <article class="logo-card">
+            <div class="logo-preview light">
+              <img src="assets/iimi-logo-black.png" alt="IIMI black monochrome logo">
+            </div>
+            <div class="logo-info">
+              <div>
+                <h3 class="logo-title">Logo / Black Monochrome</h3>
+                <p class="logo-meta">PNG · iimi-logo-black.png</p>
+              </div>
+              <a class="download-link" href="assets/iimi-logo-black.png" download="iimi-logo-black.png">Download PNG</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="inner">
+        <h2 class="section-title">Semantic Color Tokens</h2>
+        <p class="section-copy">Source: Semantic.zip / Dark.tokens.json. Values below are token values and their primitive aliases.</p>
+
+        <div class="block table-wrap">
+          <table class="type-table">
+            <thead>
+              <tr>
+                <th>Token</th>
+                <th>Value</th>
+                <th>Alias</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><span class="swatch-inline" style="background:#141310"></span>bg/base</td><td>#141310</td><td>warm/950</td><td>Основний фон сторінки. Light: #F5F2EB warm parchment. Dark: #0F1218 near-black.</td></tr>
+              <tr><td><span class="swatch-inline" style="background:#1C1A17"></span>bg/surface</td><td>#1C1A17</td><td>warm/900</td><td>Фон карток, панелей, секцій.</td></tr>
+              <tr><td><span class="swatch-inline" style="background:#242019"></span>bg/surface-hover</td><td>#242019</td><td>warm/850</td><td>Hover стан поверхні картки.</td></tr>
+              <tr><td><span class="swatch-inline" style="background:#302C24"></span>bg/elevated</td><td>#302C24</td><td>warm/800</td><td>Піднята поверхня — модалки, дропдауни.</td></tr>
+              <tr><td><span class="swatch-inline" style="background:rgba(20, 19, 16, 0.92)"></span>bg/overlay</td><td>#141310 @ 92%</td><td>warm/overlay-dark</td><td>Напівпрозорий оверлей поверх фото і модалок.</td></tr>
+              <tr><td><span class="swatch-inline" style="background:rgba(203, 19, 19, 0.09)"></span>bg/accent-tint</td><td>#CB1313 @ 9%</td><td>red/accent-tint-dark</td><td>Легкий червоний tint — quote блоки, alert panels.</td></tr>
+              <tr><td><span class="swatch-inline" style="background:#E8E5DE"></span>text/primary</td><td>#E8E5DE</td><td>warm/text</td><td>Основний текст — заголовки, активні UI елементи.</td></tr>
+              <tr><td><span class="swatch-inline" style="background:rgba(232, 229, 222, 0.55)"></span>text/secondary</td><td>#E8E5DE @ 55%</td><td>warm/text-secondary-dark</td><td>Body copy, описи сервісів.</td></tr>
+              <tr><td><span class="swatch-inline" style="background:rgba(232, 229, 222, 0.35)"></span>text/muted</td><td>#E8E5DE @ 35%</td><td>warm/text-muted-dark</td><td>Метадата, timestamps, координати.</td></tr>
+              <tr><td><span class="swatch-inline" style="background:rgba(232, 229, 222, 0.2)"></span>text/disabled</td><td>#E8E5DE @ 20%</td><td>warm/text-disabled-dark</td><td>Неактивні лейбли, trust bar клієнти.</td></tr>
+              <tr><td><span class="swatch-inline" style="background:#CB1313"></span>text/accent</td><td>#CB1313</td><td>red/500</td><td>Eyebrow labels, акцентні слова. #CB1313 в обох модах.</td></tr>
+              <tr><td><span class="swatch-inline" style="background:#FFFFFF"></span>text/on-accent</td><td>#FFFFFF</td><td>gray/0</td><td>Текст поверх червоної кнопки (#CB1313 bg).</td></tr>
+              <tr><td><span class="swatch-inline" style="background:#E8E5DE"></span>text/on-dark</td><td>#E8E5DE</td><td>warm/text</td><td>Текст поверх темного фону в light mode компонентах.</td></tr>
+              <tr><td><span class="swatch-inline" style="background:rgba(232, 229, 222, 0.08)"></span>border/subtle</td><td>#E8E5DE @ 8%</td><td>warm/border-subtle-dark</td><td>Між секціями — Harvey hairline 0.5px.</td></tr>
+              <tr><td><span class="swatch-inline" style="background:rgba(232, 229, 222, 0.14)"></span>border/default</td><td>#E8E5DE @ 14%</td><td>warm/border-default-dark</td><td>Картки і панелі.</td></tr>
+              <tr><td><span class="swatch-inline" style="background:rgba(232, 229, 222, 0.28)"></span>border/strong</td><td>#E8E5DE @ 28%</td><td>warm/border-strong-dark</td><td>Hover стан картки, виділений контейнер.</td></tr>
+              <tr><td><span class="swatch-inline" style="background:rgba(203, 19, 19, 0.35)"></span>border/accent</td><td>#CB1313 @ 35%</td><td>red/border-accent</td><td>Іконки, tag frames — red tint border.</td></tr>
+              <tr><td><span class="swatch-inline" style="background:#CB1313"></span>border/focus</td><td>#CB1313</td><td>red/500</td><td>Focus ring для inputs і interactive елементів.</td></tr>
+              <tr><td><span class="swatch-inline" style="background:#CB1313"></span>action/primary</td><td>#CB1313</td><td>red/500</td><td>Primary CTA button background. #CB1313.</td></tr>
+              <tr><td><span class="swatch-inline" style="background:#A80F0F"></span>action/primary-hover</td><td>#A80F0F</td><td>red/600</td><td>Button :hover state. #A80F0F.</td></tr>
+              <tr><td><span class="swatch-inline" style="background:#870C0C"></span>action/primary-active</td><td>#870C0C</td><td>red/700</td><td>Button :active / pressed state. #870C0C.</td></tr>
+              <tr><td><span class="swatch-inline" style="background:#FDF2F2"></span>action/primary-tint</td><td>#FDF2F2</td><td>red/50</td><td>Дуже світлий red fill для secondary red areas.</td></tr>
+              <tr><td><span class="swatch-inline" style="background:rgba(232, 229, 222, 0.2)"></span>action/ghost-border</td><td>#E8E5DE @ 20%</td><td>warm/ghost-border-dark</td><td>Ghost / outline button border.</td></tr>
+              <tr><td><span class="swatch-inline" style="background:rgba(232, 229, 222, 0.4)"></span>action/ghost-border-hover</td><td>#E8E5DE @ 40%</td><td>warm/ghost-border-hover-dark</td><td>Ghost button border on hover.</td></tr>
+              <tr><td><span class="swatch-inline" style="background:#41C95C"></span>status/success</td><td>#41C95C</td><td>system/success/400</td><td>Success green — compliance dot, confirmed states.</td></tr>
+              <tr><td><span class="swatch-inline" style="background:#EDFBF0"></span>status/success-soft</td><td>#EDFBF0</td><td>system/success/50</td><td>Soft green background для success badges.</td></tr>
+              <tr><td><span class="swatch-inline" style="background:#FFCC24"></span>status/warning</td><td>#FFCC24</td><td>system/warning/400</td><td>Warning amber.</td></tr>
+              <tr><td><span class="swatch-inline" style="background:#FFFBE6"></span>status/warning-soft</td><td>#FFFBE6</td><td>system/warning/50</td><td>Soft amber background.</td></tr>
+              <tr><td><span class="swatch-inline" style="background:#CB1313"></span>status/error</td><td>#CB1313</td><td>red/500</td><td>Error state — shared з accent red/500.</td></tr>
+              <tr><td><span class="swatch-inline" style="background:rgba(203, 19, 19, 0.12)"></span>status/error-soft</td><td>#CB1313 @ 12%</td><td></td><td>Soft red background для error messages.</td></tr>
+              <tr><td><span class="swatch-inline" style="background:#3D9EFF"></span>status/info</td><td>#3D9EFF</td><td>system/info/400</td><td>Informational blue.</td></tr>
+              <tr><td><span class="swatch-inline" style="background:#EBF5FF"></span>status/info-soft</td><td>#EBF5FF</td><td>system/info/50</td><td>Soft blue background.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="table-title">Core Primitive References</h3>
+        <div class="table-wrap">
+          <table class="type-table">
+            <thead>
+              <tr>
+                <th>Primitive</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><span class="swatch-inline" style="background:#FDF2F2"></span>red/50</td><td>#FDF2F2</td></tr>
+              <tr><td><span class="swatch-inline" style="background:#CB1313"></span>red/500</td><td>#CB1313</td></tr>
+              <tr><td><span class="swatch-inline" style="background:#A80F0F"></span>red/600</td><td>#A80F0F</td></tr>
+              <tr><td><span class="swatch-inline" style="background:#870C0C"></span>red/700</td><td>#870C0C</td></tr>
+              <tr><td><span class="swatch-inline" style="background:#FFFFFF"></span>gray/0</td><td>#FFFFFF</td></tr>
+              <tr><td><span class="swatch-inline" style="background:#41C95C"></span>system/success/400</td><td>#41C95C</td></tr>
+              <tr><td><span class="swatch-inline" style="background:#FFCC24"></span>system/warning/400</td><td>#FFCC24</td></tr>
+              <tr><td><span class="swatch-inline" style="background:#3D9EFF"></span>system/info/400</td><td>#3D9EFF</td></tr>
+              <tr><td><span class="swatch-inline" style="background:#302C24"></span>warm/800</td><td>#302C24</td></tr>
+              <tr><td><span class="swatch-inline" style="background:#242019"></span>warm/850</td><td>#242019</td></tr>
+              <tr><td><span class="swatch-inline" style="background:#1C1A17"></span>warm/900</td><td>#1C1A17</td></tr>
+              <tr><td><span class="swatch-inline" style="background:#141310"></span>warm/950</td><td>#141310</td></tr>
+              <tr><td><span class="swatch-inline" style="background:#E8E5DE"></span>warm/text</td><td>#E8E5DE</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="inner">
+        <h2 class="section-title">Typography Tokens</h2>
+        <p class="section-copy">Sources: Typography.zip / Sans.tokens.json and Text Styles.zip / Desktop.tokens.json.</p>
+
+        <h3 class="table-title">Font Tokens</h3>
+        <div class="table-wrap">
+          <table class="type-table">
+            <thead>
+              <tr>
+                <th>Token</th>
+                <th>Value</th>
+                <th>Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>font/family/primary</td><td>Plus Jakarta Sans</td><td>string</td><td></td></tr>
+              <tr><td>font/family/secondary</td><td>Plus Jakarta Sans</td><td>string</td><td>Secondary display font — EB Garamond для hero headlines та quote sections</td></tr>
+              <tr><td>font/family/mono</td><td>JetBrains Mono</td><td>string</td><td></td></tr>
+              <tr><td>font/family/serif</td><td>EB Garamond</td><td>string</td><td>Display serif — використовується для H1, H2, quote marks на IIMI сайті</td></tr>
+              <tr><td>font/weight/regular</td><td>400</td><td>number</td><td></td></tr>
+              <tr><td>font/weight/medium</td><td>500</td><td>number</td><td></td></tr>
+              <tr><td>font/weight/semibold</td><td>600</td><td>number</td><td></td></tr>
+              <tr><td>font/weight/bold</td><td>700</td><td>number</td><td></td></tr>
+              <tr><td>font/weight/extrabold</td><td>800</td><td>number</td><td></td></tr>
+              <tr><td>font/weight/display</td><td>400</td><td>number</td><td>EB Garamond display weight — 400 regular. Serif робить роботу, не weight.</td></tr>
+              <tr><td>font/size/2xs</td><td>10</td><td>number</td><td></td></tr>
+              <tr><td>font/size/xs</td><td>12</td><td>number</td><td></td></tr>
+              <tr><td>font/size/sm</td><td>14</td><td>number</td><td></td></tr>
+              <tr><td>font/size/md</td><td>16</td><td>number</td><td></td></tr>
+              <tr><td>font/size/lg</td><td>18</td><td>number</td><td></td></tr>
+              <tr><td>font/size/xl</td><td>20</td><td>number</td><td></td></tr>
+              <tr><td>font/size/2xl</td><td>24</td><td>number</td><td></td></tr>
+              <tr><td>font/size/3xl</td><td>30</td><td>number</td><td></td></tr>
+              <tr><td>font/size/4xl</td><td>36</td><td>number</td><td></td></tr>
+              <tr><td>font/size/5xl</td><td>48</td><td>number</td><td></td></tr>
+              <tr><td>font/size/6xl</td><td>60</td><td>number</td><td></td></tr>
+              <tr><td>font/size/7xl</td><td>72</td><td>number</td><td></td></tr>
+              <tr><td>font/size/8xl</td><td>96</td><td>number</td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="table-title">Desktop Text Styles</h3>
+        <div class="table-wrap">
+          <table class="type-table">
+            <thead>
+              <tr>
+                <th>Style</th>
+                <th>Family</th>
+                <th>Size</th>
+                <th>Weight</th>
+                <th>Alias</th>
+                <th>Transform</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>text/display/2xl</td><td>Plus Jakarta Sans</td><td>96px</td><td>700</td><td>font/size/8xl</td><td></td></tr>
+              <tr><td>text/display/xl</td><td>Plus Jakarta Sans</td><td>72px</td><td>500</td><td>font/size/7xl</td><td></td></tr>
+              <tr><td>text/display/lg</td><td>Plus Jakarta Sans</td><td>60px</td><td>500</td><td>font/size/6xl</td><td></td></tr>
+              <tr><td>text/heading/h1</td><td>Plus Jakarta Sans</td><td>48px</td><td>600</td><td>font/size/5xl</td><td></td></tr>
+              <tr><td>text/heading/h2</td><td>Plus Jakarta Sans</td><td>36px</td><td>600</td><td>font/size/4xl</td><td></td></tr>
+              <tr><td>text/heading/h3</td><td>Plus Jakarta Sans</td><td>30px</td><td>600</td><td>font/size/3xl</td><td></td></tr>
+              <tr><td>text/heading/h4</td><td>Plus Jakarta Sans</td><td>24px</td><td>600</td><td>font/size/2xl</td><td></td></tr>
+              <tr><td>text/heading/h5</td><td>Plus Jakarta Sans</td><td>20px</td><td>600</td><td>font/size/xl</td><td></td></tr>
+              <tr><td>text/heading/h6</td><td>Plus Jakarta Sans</td><td>18px</td><td>600</td><td>font/size/lg</td><td></td></tr>
+              <tr><td>text/body/xl</td><td>Plus Jakarta Sans</td><td>20px</td><td>400</td><td>font/size/xl</td><td></td></tr>
+              <tr><td>text/body/lg</td><td>Plus Jakarta Sans</td><td>18px</td><td>400</td><td>font/size/lg</td><td></td></tr>
+              <tr><td>text/body/md</td><td>Plus Jakarta Sans</td><td>16px</td><td>400</td><td>font/size/md</td><td></td></tr>
+              <tr><td>text/body/sm</td><td>Plus Jakarta Sans</td><td>14px</td><td>400</td><td>font/size/sm</td><td></td></tr>
+              <tr><td>text/label/lg</td><td>Plus Jakarta Sans</td><td>16px</td><td>600</td><td>font/size/md</td><td></td></tr>
+              <tr><td>text/label/md</td><td>Plus Jakarta Sans</td><td>14px</td><td>600</td><td>font/size/sm</td><td></td></tr>
+              <tr><td>text/label/sm</td><td>Plus Jakarta Sans</td><td>12px</td><td>600</td><td>font/size/xs</td><td></td></tr>
+              <tr><td>text/caption/md</td><td>Plus Jakarta Sans</td><td>12px</td><td>400</td><td>font/size/xs</td><td></td></tr>
+              <tr><td>text/caption/sm</td><td>Plus Jakarta Sans</td><td>10px</td><td>400</td><td>font/size/2xs</td><td></td></tr>
+              <tr><td>text/overline</td><td>Plus Jakarta Sans</td><td>12px</td><td>600</td><td>font/size/xs</td><td>uppercase</td></tr>
+              <tr><td>text/code/md</td><td>JetBrains Mono</td><td>14px</td><td>400</td><td>font/size/sm</td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="inner">
+        <h2 class="section-title">Layout Tokens</h2>
+        <p class="section-copy">Sources: Spacing.zip / Desctop.tokens.json and Grid.zip / Desktop.tokens.json.</p>
+
+        <h3 class="table-title">Spacing & Radius</h3>
+        <div class="table-wrap">
+          <table class="type-table">
+            <thead>
+              <tr>
+                <th>Token</th>
+                <th>Value</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>spacing/Null</td><td>0px</td><td></td></tr>
+              <tr><td>spacing/2xs</td><td>2px</td><td></td></tr>
+              <tr><td>spacing/xs</td><td>4px</td><td></td></tr>
+              <tr><td>spacing/sm</td><td>8px</td><td></td></tr>
+              <tr><td>spacing/md</td><td>16px</td><td></td></tr>
+              <tr><td>spacing/lg</td><td>24px</td><td></td></tr>
+              <tr><td>spacing/xl</td><td>32px</td><td></td></tr>
+              <tr><td>spacing/2xl</td><td>40px</td><td></td></tr>
+              <tr><td>spacing/3xl</td><td>48px</td><td></td></tr>
+              <tr><td>spacing/4xl</td><td>64px</td><td></td></tr>
+              <tr><td>spacing/5xl</td><td>96px</td><td></td></tr>
+              <tr><td>spacing/section/desktop</td><td>80px</td><td>Вертикальний padding секцій на desktop (80px top + bottom).</td></tr>
+              <tr><td>spacing/section/tablet</td><td>56px</td><td></td></tr>
+              <tr><td>spacing/section/mobile</td><td>40px</td><td></td></tr>
+              <tr><td>spacing/card/padding</td><td>24px</td><td>Внутрішній padding карток сервісів.</td></tr>
+              <tr><td>radius/none</td><td>0px</td><td></td></tr>
+              <tr><td>radius/sm</td><td>2px</td><td>IIMI default — кнопки, картки, бейджі. Harvey-style near-square.</td></tr>
+              <tr><td>radius/md</td><td>4px</td><td>Теги, chips, невеликі елементи.</td></tr>
+              <tr><td>radius/lg</td><td>6px</td><td>Великі контейнери, dropdown panels.</td></tr>
+              <tr><td>radius/xl</td><td>8px</td><td></td></tr>
+              <tr><td>radius/xxl</td><td>16px</td><td></td></tr>
+              <tr><td>radius/full</td><td>9999px</td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="table-title">Desktop Grid</h3>
+        <div class="table-wrap">
+          <table class="type-table">
+            <thead>
+              <tr>
+                <th>Token</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>grid/breakpoint</td><td>1920</td></tr>
+              <tr><td>grid/columns</td><td>12</td></tr>
+              <tr><td>grid/gutter</td><td>24</td></tr>
+              <tr><td>grid/container/maxWidth</td><td>1280</td></tr>
+              <tr><td>grid/container/paddingX</td><td>80</td></tr>
+              <tr><td>grid/section/spacing</td><td>120</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
