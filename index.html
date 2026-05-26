@@ -528,6 +528,130 @@
       vertical-align: -4px;
     }
 
+    .color-board {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      border: 0.5px solid var(--color-line);
+      background: var(--color-line);
+    }
+
+    .color-card {
+      position: relative;
+      min-height: 320px;
+      overflow: hidden;
+      padding: 24px;
+      background: var(--swatch);
+      color: var(--label-color, #141310);
+    }
+
+    .color-card.alpha {
+      background:
+        linear-gradient(var(--swatch), var(--swatch)),
+        linear-gradient(45deg, rgba(232, 229, 222, 0.18) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(232, 229, 222, 0.18) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(232, 229, 222, 0.18) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(232, 229, 222, 0.18) 75%),
+        #141310;
+      background-position: 0 0, 0 0, 0 10px, 10px -10px, -10px 0;
+      background-size: auto, 20px 20px, 20px 20px, 20px 20px, 20px 20px;
+    }
+
+    .color-kicker,
+    .color-name,
+    .color-value,
+    .color-alias,
+    .color-note {
+      position: relative;
+      z-index: 1;
+      max-width: 220px;
+    }
+
+    .color-kicker {
+      margin-bottom: 10px;
+      font-size: 10px;
+      font-weight: 800;
+      line-height: 12px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .color-name {
+      font-size: 18px;
+      font-weight: 800;
+      line-height: 22px;
+    }
+
+    .color-value,
+    .color-alias {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    .color-value {
+      margin-top: 12px;
+    }
+
+    .color-alias {
+      margin-top: 2px;
+      opacity: 0.72;
+    }
+
+    .color-note {
+      position: absolute;
+      right: 24px;
+      bottom: 24px;
+      left: 24px;
+      color: inherit;
+      font-size: 12px;
+      line-height: 18px;
+      opacity: 0.72;
+    }
+
+    .color-section-title {
+      margin: 56px 0 16px;
+      color: var(--color-text);
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 16px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .primitive-strip {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 1px;
+      border: 0.5px solid var(--color-line);
+      background: var(--color-line);
+    }
+
+    .primitive-chip {
+      min-height: 132px;
+      padding: 16px;
+      background: var(--swatch);
+      color: var(--label-color, #141310);
+    }
+
+    .primitive-chip strong,
+    .primitive-chip span {
+      display: block;
+    }
+
+    .primitive-chip strong {
+      font-size: 13px;
+      line-height: 18px;
+    }
+
+    .primitive-chip span {
+      margin-top: 6px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      line-height: 16px;
+      opacity: 0.72;
+    }
+
     .type-sample {
       color: var(--color-text);
       font-size: 22px;
@@ -558,6 +682,8 @@
       .formula-grid,
       .words-grid,
       .logo-grid,
+      .color-board,
+      .primitive-strip,
       .token-grid {
         grid-template-columns: 1fr;
       }
@@ -660,80 +786,153 @@
     <section class="section alt">
       <div class="inner">
         <h2 class="section-title">Semantic Color Tokens</h2>
-        <p class="section-copy">Source: Semantic.zip / Dark.tokens.json. Values below are token values and their primitive aliases.</p>
+        <p class="section-copy">Source: Semantic.zip / Dark.tokens.json. Presented as brand-book color plates with token names, values, and primitive aliases.</p>
 
-        <div class="block table-wrap">
-          <table class="type-table">
-            <thead>
-              <tr>
-                <th>Token</th>
-                <th>Value</th>
-                <th>Alias</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td><span class="swatch-inline" style="background:#141310"></span>bg/base</td><td>#141310</td><td>warm/950</td><td>Primary page background. Light: #F5F2EB warm parchment. Dark: #0F1218 near-black.</td></tr>
-              <tr><td><span class="swatch-inline" style="background:#1C1A17"></span>bg/surface</td><td>#1C1A17</td><td>warm/900</td><td>Background for cards, panels, and sections.</td></tr>
-              <tr><td><span class="swatch-inline" style="background:#242019"></span>bg/surface-hover</td><td>#242019</td><td>warm/850</td><td>Card surface hover state.</td></tr>
-              <tr><td><span class="swatch-inline" style="background:#302C24"></span>bg/elevated</td><td>#302C24</td><td>warm/800</td><td>Elevated surface for modals and dropdowns.</td></tr>
-              <tr><td><span class="swatch-inline" style="background:rgba(20, 19, 16, 0.92)"></span>bg/overlay</td><td>#141310 @ 92%</td><td>warm/overlay-dark</td><td>Semi-transparent overlay for images and modals.</td></tr>
-              <tr><td><span class="swatch-inline" style="background:rgba(203, 19, 19, 0.09)"></span>bg/accent-tint</td><td>#CB1313 @ 9%</td><td>red/accent-tint-dark</td><td>Light red tint for quote blocks and alert panels.</td></tr>
-              <tr><td><span class="swatch-inline" style="background:#E8E5DE"></span>text/primary</td><td>#E8E5DE</td><td>warm/text</td><td>Primary text for headings and active UI elements.</td></tr>
-              <tr><td><span class="swatch-inline" style="background:rgba(232, 229, 222, 0.55)"></span>text/secondary</td><td>#E8E5DE @ 55%</td><td>warm/text-secondary-dark</td><td>Body copy and service descriptions.</td></tr>
-              <tr><td><span class="swatch-inline" style="background:rgba(232, 229, 222, 0.35)"></span>text/muted</td><td>#E8E5DE @ 35%</td><td>warm/text-muted-dark</td><td>Metadata, timestamps, and coordinates.</td></tr>
-              <tr><td><span class="swatch-inline" style="background:rgba(232, 229, 222, 0.2)"></span>text/disabled</td><td>#E8E5DE @ 20%</td><td>warm/text-disabled-dark</td><td>Inactive labels and trust-bar client names.</td></tr>
-              <tr><td><span class="swatch-inline" style="background:#CB1313"></span>text/accent</td><td>#CB1313</td><td>red/500</td><td>Eyebrow labels and accent words. #CB1313 in both modes.</td></tr>
-              <tr><td><span class="swatch-inline" style="background:#FFFFFF"></span>text/on-accent</td><td>#FFFFFF</td><td>gray/0</td><td>Text on red buttons (#CB1313 background).</td></tr>
-              <tr><td><span class="swatch-inline" style="background:#E8E5DE"></span>text/on-dark</td><td>#E8E5DE</td><td>warm/text</td><td>Text on dark backgrounds in light-mode components.</td></tr>
-              <tr><td><span class="swatch-inline" style="background:rgba(232, 229, 222, 0.08)"></span>border/subtle</td><td>#E8E5DE @ 8%</td><td>warm/border-subtle-dark</td><td>Section separators and 0.5px hairlines.</td></tr>
-              <tr><td><span class="swatch-inline" style="background:rgba(232, 229, 222, 0.14)"></span>border/default</td><td>#E8E5DE @ 14%</td><td>warm/border-default-dark</td><td>Default border for cards and panels.</td></tr>
-              <tr><td><span class="swatch-inline" style="background:rgba(232, 229, 222, 0.28)"></span>border/strong</td><td>#E8E5DE @ 28%</td><td>warm/border-strong-dark</td><td>Card hover state and highlighted containers.</td></tr>
-              <tr><td><span class="swatch-inline" style="background:rgba(203, 19, 19, 0.35)"></span>border/accent</td><td>#CB1313 @ 35%</td><td>red/border-accent</td><td>Red-tinted borders for icons and tag frames.</td></tr>
-              <tr><td><span class="swatch-inline" style="background:#CB1313"></span>border/focus</td><td>#CB1313</td><td>red/500</td><td>Focus ring for inputs and interactive elements.</td></tr>
-              <tr><td><span class="swatch-inline" style="background:#CB1313"></span>action/primary</td><td>#CB1313</td><td>red/500</td><td>Primary CTA button background. #CB1313.</td></tr>
-              <tr><td><span class="swatch-inline" style="background:#A80F0F"></span>action/primary-hover</td><td>#A80F0F</td><td>red/600</td><td>Button :hover state. #A80F0F.</td></tr>
-              <tr><td><span class="swatch-inline" style="background:#870C0C"></span>action/primary-active</td><td>#870C0C</td><td>red/700</td><td>Button :active / pressed state. #870C0C.</td></tr>
-              <tr><td><span class="swatch-inline" style="background:#FDF2F2"></span>action/primary-tint</td><td>#FDF2F2</td><td>red/50</td><td>Very light red fill for secondary red areas.</td></tr>
-              <tr><td><span class="swatch-inline" style="background:rgba(232, 229, 222, 0.2)"></span>action/ghost-border</td><td>#E8E5DE @ 20%</td><td>warm/ghost-border-dark</td><td>Ghost / outline button border.</td></tr>
-              <tr><td><span class="swatch-inline" style="background:rgba(232, 229, 222, 0.4)"></span>action/ghost-border-hover</td><td>#E8E5DE @ 40%</td><td>warm/ghost-border-hover-dark</td><td>Ghost button border on hover.</td></tr>
-              <tr><td><span class="swatch-inline" style="background:#41C95C"></span>status/success</td><td>#41C95C</td><td>system/success/400</td><td>Success green — compliance dot, confirmed states.</td></tr>
-              <tr><td><span class="swatch-inline" style="background:#EDFBF0"></span>status/success-soft</td><td>#EDFBF0</td><td>system/success/50</td><td>Soft green background for success badges.</td></tr>
-              <tr><td><span class="swatch-inline" style="background:#FFCC24"></span>status/warning</td><td>#FFCC24</td><td>system/warning/400</td><td>Warning amber.</td></tr>
-              <tr><td><span class="swatch-inline" style="background:#FFFBE6"></span>status/warning-soft</td><td>#FFFBE6</td><td>system/warning/50</td><td>Soft amber background.</td></tr>
-              <tr><td><span class="swatch-inline" style="background:#CB1313"></span>status/error</td><td>#CB1313</td><td>red/500</td><td>Error state shared with accent red/500.</td></tr>
-              <tr><td><span class="swatch-inline" style="background:rgba(203, 19, 19, 0.12)"></span>status/error-soft</td><td>#CB1313 @ 12%</td><td></td><td>Soft red background for error messages.</td></tr>
-              <tr><td><span class="swatch-inline" style="background:#3D9EFF"></span>status/info</td><td>#3D9EFF</td><td>system/info/400</td><td>Informational blue.</td></tr>
-              <tr><td><span class="swatch-inline" style="background:#EBF5FF"></span>status/info-soft</td><td>#EBF5FF</td><td>system/info/50</td><td>Soft blue background.</td></tr>
-            </tbody>
-          </table>
+        <h3 class="color-section-title">Background</h3>
+        <div class="block color-board">
+          <article class="color-card" style="--swatch:#141310; --label-color:#E8E5DE;">
+            <p class="color-kicker">BG / Base</p>
+            <h3 class="color-name">bg/base</h3>
+            <p class="color-value">#141310</p>
+            <p class="color-alias">warm/950</p>
+            <p class="color-note">Primary page background.</p>
+          </article>
+          <article class="color-card" style="--swatch:#1C1A17; --label-color:#E8E5DE;">
+            <p class="color-kicker">BG / Surface</p>
+            <h3 class="color-name">bg/surface</h3>
+            <p class="color-value">#1C1A17</p>
+            <p class="color-alias">warm/900</p>
+            <p class="color-note">Cards, panels, and sections.</p>
+          </article>
+          <article class="color-card" style="--swatch:#242019; --label-color:#E8E5DE;">
+            <p class="color-kicker">BG / Hover</p>
+            <h3 class="color-name">bg/surface-hover</h3>
+            <p class="color-value">#242019</p>
+            <p class="color-alias">warm/850</p>
+            <p class="color-note">Card surface hover state.</p>
+          </article>
+          <article class="color-card" style="--swatch:#302C24; --label-color:#E8E5DE;">
+            <p class="color-kicker">BG / Elevated</p>
+            <h3 class="color-name">bg/elevated</h3>
+            <p class="color-value">#302C24</p>
+            <p class="color-alias">warm/800</p>
+            <p class="color-note">Modals and dropdowns.</p>
+          </article>
+          <article class="color-card alpha" style="--swatch:rgba(20, 19, 16, 0.92); --label-color:#E8E5DE;">
+            <p class="color-kicker">BG / Overlay</p>
+            <h3 class="color-name">bg/overlay</h3>
+            <p class="color-value">#141310 @ 92%</p>
+            <p class="color-alias">warm/overlay-dark</p>
+            <p class="color-note">Overlay for images and modals.</p>
+          </article>
+          <article class="color-card alpha" style="--swatch:rgba(203, 19, 19, 0.09); --label-color:#E8E5DE;">
+            <p class="color-kicker">BG / Accent Tint</p>
+            <h3 class="color-name">bg/accent-tint</h3>
+            <p class="color-value">#CB1313 @ 9%</p>
+            <p class="color-alias">red/accent-tint-dark</p>
+            <p class="color-note">Quote blocks and alert panels.</p>
+          </article>
         </div>
 
-        <h3 class="table-title">Core Primitive References</h3>
-        <div class="table-wrap">
-          <table class="type-table">
-            <thead>
-              <tr>
-                <th>Primitive</th>
-                <th>Value</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td><span class="swatch-inline" style="background:#FDF2F2"></span>red/50</td><td>#FDF2F2</td></tr>
-              <tr><td><span class="swatch-inline" style="background:#CB1313"></span>red/500</td><td>#CB1313</td></tr>
-              <tr><td><span class="swatch-inline" style="background:#A80F0F"></span>red/600</td><td>#A80F0F</td></tr>
-              <tr><td><span class="swatch-inline" style="background:#870C0C"></span>red/700</td><td>#870C0C</td></tr>
-              <tr><td><span class="swatch-inline" style="background:#FFFFFF"></span>gray/0</td><td>#FFFFFF</td></tr>
-              <tr><td><span class="swatch-inline" style="background:#41C95C"></span>system/success/400</td><td>#41C95C</td></tr>
-              <tr><td><span class="swatch-inline" style="background:#FFCC24"></span>system/warning/400</td><td>#FFCC24</td></tr>
-              <tr><td><span class="swatch-inline" style="background:#3D9EFF"></span>system/info/400</td><td>#3D9EFF</td></tr>
-              <tr><td><span class="swatch-inline" style="background:#302C24"></span>warm/800</td><td>#302C24</td></tr>
-              <tr><td><span class="swatch-inline" style="background:#242019"></span>warm/850</td><td>#242019</td></tr>
-              <tr><td><span class="swatch-inline" style="background:#1C1A17"></span>warm/900</td><td>#1C1A17</td></tr>
-              <tr><td><span class="swatch-inline" style="background:#141310"></span>warm/950</td><td>#141310</td></tr>
-              <tr><td><span class="swatch-inline" style="background:#E8E5DE"></span>warm/text</td><td>#E8E5DE</td></tr>
-            </tbody>
-          </table>
+        <h3 class="color-section-title">Text</h3>
+        <div class="color-board">
+          <article class="color-card" style="--swatch:#E8E5DE; --label-color:#141310;">
+            <p class="color-kicker">Text / Primary</p>
+            <h3 class="color-name">text/primary</h3>
+            <p class="color-value">#E8E5DE</p>
+            <p class="color-alias">warm/text</p>
+            <p class="color-note">Headings and active UI elements.</p>
+          </article>
+          <article class="color-card alpha" style="--swatch:rgba(232, 229, 222, 0.55); --label-color:#141310;">
+            <p class="color-kicker">Text / Secondary</p>
+            <h3 class="color-name">text/secondary</h3>
+            <p class="color-value">#E8E5DE @ 55%</p>
+            <p class="color-alias">warm/text-secondary-dark</p>
+            <p class="color-note">Body copy and service descriptions.</p>
+          </article>
+          <article class="color-card alpha" style="--swatch:rgba(232, 229, 222, 0.35); --label-color:#141310;">
+            <p class="color-kicker">Text / Muted</p>
+            <h3 class="color-name">text/muted</h3>
+            <p class="color-value">#E8E5DE @ 35%</p>
+            <p class="color-alias">warm/text-muted-dark</p>
+            <p class="color-note">Metadata and timestamps.</p>
+          </article>
+          <article class="color-card" style="--swatch:#CB1313; --label-color:#FFFFFF;">
+            <p class="color-kicker">Text / Accent</p>
+            <h3 class="color-name">text/accent</h3>
+            <p class="color-value">#CB1313</p>
+            <p class="color-alias">red/500</p>
+            <p class="color-note">Eyebrow labels and accent words.</p>
+          </article>
+          <article class="color-card" style="--swatch:#FFFFFF; --label-color:#141310;">
+            <p class="color-kicker">Text / On Accent</p>
+            <h3 class="color-name">text/on-accent</h3>
+            <p class="color-value">#FFFFFF</p>
+            <p class="color-alias">gray/0</p>
+            <p class="color-note">Text on red CTA buttons.</p>
+          </article>
+        </div>
+
+        <h3 class="color-section-title">Action & Status</h3>
+        <div class="color-board">
+          <article class="color-card" style="--swatch:#CB1313; --label-color:#FFFFFF;">
+            <p class="color-kicker">Action / Primary</p>
+            <h3 class="color-name">action/primary</h3>
+            <p class="color-value">#CB1313</p>
+            <p class="color-alias">red/500</p>
+            <p class="color-note">Primary CTA background.</p>
+          </article>
+          <article class="color-card" style="--swatch:#A80F0F; --label-color:#FFFFFF;">
+            <p class="color-kicker">Action / Hover</p>
+            <h3 class="color-name">action/primary-hover</h3>
+            <p class="color-value">#A80F0F</p>
+            <p class="color-alias">red/600</p>
+            <p class="color-note">Primary button hover state.</p>
+          </article>
+          <article class="color-card" style="--swatch:#870C0C; --label-color:#FFFFFF;">
+            <p class="color-kicker">Action / Active</p>
+            <h3 class="color-name">action/primary-active</h3>
+            <p class="color-value">#870C0C</p>
+            <p class="color-alias">red/700</p>
+            <p class="color-note">Pressed or active state.</p>
+          </article>
+          <article class="color-card" style="--swatch:#41C95C; --label-color:#141310;">
+            <p class="color-kicker">Status / Success</p>
+            <h3 class="color-name">status/success</h3>
+            <p class="color-value">#41C95C</p>
+            <p class="color-alias">system/success/400</p>
+            <p class="color-note">Confirmed states and compliance dots.</p>
+          </article>
+          <article class="color-card" style="--swatch:#FFCC24; --label-color:#141310;">
+            <p class="color-kicker">Status / Warning</p>
+            <h3 class="color-name">status/warning</h3>
+            <p class="color-value">#FFCC24</p>
+            <p class="color-alias">system/warning/400</p>
+            <p class="color-note">Warning and caution states.</p>
+          </article>
+          <article class="color-card" style="--swatch:#3D9EFF; --label-color:#141310;">
+            <p class="color-kicker">Status / Info</p>
+            <h3 class="color-name">status/info</h3>
+            <p class="color-value">#3D9EFF</p>
+            <p class="color-alias">system/info/400</p>
+            <p class="color-note">Informational state.</p>
+          </article>
+        </div>
+
+        <h3 class="color-section-title">Core Primitive References</h3>
+        <div class="primitive-strip">
+          <div class="primitive-chip" style="--swatch:#FDF2F2; --label-color:#141310;"><strong>red/50</strong><span>#FDF2F2</span></div>
+          <div class="primitive-chip" style="--swatch:#CB1313; --label-color:#FFFFFF;"><strong>red/500</strong><span>#CB1313</span></div>
+          <div class="primitive-chip" style="--swatch:#A80F0F; --label-color:#FFFFFF;"><strong>red/600</strong><span>#A80F0F</span></div>
+          <div class="primitive-chip" style="--swatch:#870C0C; --label-color:#FFFFFF;"><strong>red/700</strong><span>#870C0C</span></div>
+          <div class="primitive-chip" style="--swatch:#302C24; --label-color:#E8E5DE;"><strong>warm/800</strong><span>#302C24</span></div>
+          <div class="primitive-chip" style="--swatch:#242019; --label-color:#E8E5DE;"><strong>warm/850</strong><span>#242019</span></div>
+          <div class="primitive-chip" style="--swatch:#1C1A17; --label-color:#E8E5DE;"><strong>warm/900</strong><span>#1C1A17</span></div>
+          <div class="primitive-chip" style="--swatch:#141310; --label-color:#E8E5DE;"><strong>warm/950</strong><span>#141310</span></div>
+          <div class="primitive-chip" style="--swatch:#E8E5DE; --label-color:#141310;"><strong>warm/text</strong><span>#E8E5DE</span></div>
+          <div class="primitive-chip" style="--swatch:#41C95C; --label-color:#141310;"><strong>success/400</strong><span>#41C95C</span></div>
+          <div class="primitive-chip" style="--swatch:#FFCC24; --label-color:#141310;"><strong>warning/400</strong><span>#FFCC24</span></div>
+          <div class="primitive-chip" style="--swatch:#3D9EFF; --label-color:#141310;"><strong>info/400</strong><span>#3D9EFF</span></div>
         </div>
       </div>
     </section>
