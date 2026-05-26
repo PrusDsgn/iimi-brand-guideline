@@ -652,6 +652,65 @@
       opacity: 0.72;
     }
 
+    .font-specimen-grid {
+      display: grid;
+      gap: 24px;
+    }
+
+    .font-specimen {
+      border: 0.5px solid var(--color-line);
+      background: #11100d;
+      padding: 56px 60px 48px;
+      color: var(--color-text);
+    }
+
+    .font-specimen-meta {
+      margin-bottom: 72px;
+      color: var(--color-text-45);
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 26px;
+    }
+
+    .font-specimen-name {
+      margin-bottom: 64px;
+      color: var(--color-text-55);
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 36px;
+    }
+
+    .font-specimen-glyph {
+      margin-bottom: 64px;
+      color: var(--color-text);
+      font-size: 132px;
+      font-weight: 700;
+      line-height: 0.8;
+      letter-spacing: -0.04em;
+    }
+
+    .font-specimen-charset {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 72px;
+      color: var(--color-text);
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 38px;
+      letter-spacing: -0.02em;
+    }
+
+    .font-specimen-link {
+      color: var(--color-text-45);
+      font-size: 28px;
+      line-height: 36px;
+      text-decoration: none;
+    }
+
+    .font-specimen-link:hover {
+      color: var(--color-red);
+    }
+
     .type-sample {
       color: var(--color-text);
       font-size: 22px;
@@ -684,6 +743,7 @@
       .logo-grid,
       .color-board,
       .primitive-strip,
+      .font-specimen-grid,
       .token-grid {
         grid-template-columns: 1fr;
       }
@@ -716,6 +776,27 @@
       .logo-info {
         align-items: flex-start;
         flex-direction: column;
+      }
+
+      .font-specimen {
+        padding: 36px 28px;
+      }
+
+      .font-specimen-meta,
+      .font-specimen-name,
+      .font-specimen-glyph,
+      .font-specimen-charset {
+        margin-bottom: 40px;
+      }
+
+      .font-specimen-glyph {
+        font-size: 88px;
+      }
+
+      .font-specimen-charset,
+      .font-specimen-link {
+        font-size: 20px;
+        line-height: 30px;
       }
     }
   </style>
@@ -941,43 +1022,43 @@
       <div class="inner">
         <h2 class="section-title">Typography Tokens</h2>
 
-        <h3 class="table-title">Font Tokens</h3>
-        <div class="table-wrap">
-          <table class="type-table">
-            <thead>
-              <tr>
-                <th>Token</th>
-                <th>Value</th>
-                <th>Type</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>font/family/primary</td><td><a class="font-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Plus Jakarta Sans</a></td><td>string</td><td></td></tr>
-              <tr><td>font/family/secondary</td><td><a class="font-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Plus Jakarta Sans</a></td><td>string</td><td>Secondary display font. <a class="font-link" href="https://fonts.google.com/specimen/EB+Garamond" target="_blank" rel="noopener noreferrer">EB Garamond</a> is used for hero headlines and quote sections.</td></tr>
-              <tr><td>font/family/mono</td><td><a class="font-link" href="https://fonts.google.com/specimen/JetBrains+Mono" target="_blank" rel="noopener noreferrer">JetBrains Mono</a></td><td>string</td><td></td></tr>
-              <tr><td>font/family/serif</td><td><a class="font-link" href="https://fonts.google.com/specimen/EB+Garamond" target="_blank" rel="noopener noreferrer">EB Garamond</a></td><td>string</td><td>Display serif used for H1, H2, and quote marks on the IIMI site.</td></tr>
-              <tr><td>font/weight/regular</td><td>400</td><td>number</td><td></td></tr>
-              <tr><td>font/weight/medium</td><td>500</td><td>number</td><td></td></tr>
-              <tr><td>font/weight/semibold</td><td>600</td><td>number</td><td></td></tr>
-              <tr><td>font/weight/bold</td><td>700</td><td>number</td><td></td></tr>
-              <tr><td>font/weight/extrabold</td><td>800</td><td>number</td><td></td></tr>
-              <tr><td>font/weight/display</td><td>400</td><td>number</td><td><a class="font-link" href="https://fonts.google.com/specimen/EB+Garamond" target="_blank" rel="noopener noreferrer">EB Garamond</a> display weight: 400 regular. The serif face carries the display character, not heavier weight.</td></tr>
-              <tr><td>font/size/2xs</td><td>10</td><td>number</td><td></td></tr>
-              <tr><td>font/size/xs</td><td>12</td><td>number</td><td></td></tr>
-              <tr><td>font/size/sm</td><td>14</td><td>number</td><td></td></tr>
-              <tr><td>font/size/md</td><td>16</td><td>number</td><td></td></tr>
-              <tr><td>font/size/lg</td><td>18</td><td>number</td><td></td></tr>
-              <tr><td>font/size/xl</td><td>20</td><td>number</td><td></td></tr>
-              <tr><td>font/size/2xl</td><td>24</td><td>number</td><td></td></tr>
-              <tr><td>font/size/3xl</td><td>30</td><td>number</td><td></td></tr>
-              <tr><td>font/size/4xl</td><td>36</td><td>number</td><td></td></tr>
-              <tr><td>font/size/5xl</td><td>48</td><td>number</td><td></td></tr>
-              <tr><td>font/size/6xl</td><td>60</td><td>number</td><td></td></tr>
-              <tr><td>font/size/7xl</td><td>72</td><td>number</td><td></td></tr>
-              <tr><td>font/size/8xl</td><td>96</td><td>number</td><td></td></tr>
-            </tbody>
-          </table>
+        <h3 class="table-title">Font Specimens</h3>
+        <div class="font-specimen-grid">
+          <article class="font-specimen" style="font-family: var(--font-primary);">
+            <p class="font-specimen-meta">Sans — Primary</p>
+            <h3 class="font-specimen-name">Plus Jakarta Sans</h3>
+            <p class="font-specimen-glyph">Aa</p>
+            <div class="font-specimen-charset">
+              <p>ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+              <p>abcdefghijklmnopqrstuvwxyz</p>
+              <p>1234567890</p>
+            </div>
+            <a class="font-specimen-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Font Link</a>
+          </article>
+
+          <article class="font-specimen" style="font-family: var(--font-mono);">
+            <p class="font-specimen-meta">Mono — Code</p>
+            <h3 class="font-specimen-name">JetBrains Mono</h3>
+            <p class="font-specimen-glyph">Aa</p>
+            <div class="font-specimen-charset">
+              <p>ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+              <p>abcdefghijklmnopqrstuvwxyz</p>
+              <p>1234567890</p>
+            </div>
+            <a class="font-specimen-link" href="https://fonts.google.com/specimen/JetBrains+Mono" target="_blank" rel="noopener noreferrer">Font Link</a>
+          </article>
+
+          <article class="font-specimen" style="font-family: 'EB Garamond', Georgia, serif;">
+            <p class="font-specimen-meta">Serif — Display</p>
+            <h3 class="font-specimen-name">EB Garamond</h3>
+            <p class="font-specimen-glyph">Aa</p>
+            <div class="font-specimen-charset">
+              <p>ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+              <p>abcdefghijklmnopqrstuvwxyz</p>
+              <p>1234567890</p>
+            </div>
+            <a class="font-specimen-link" href="https://fonts.google.com/specimen/EB+Garamond" target="_blank" rel="noopener noreferrer">Font Link</a>
+          </article>
         </div>
 
         <h3 class="table-title">Desktop Text Styles</h3>
@@ -989,31 +1070,30 @@
                 <th>Family</th>
                 <th>Size</th>
                 <th>Weight</th>
-                <th>Alias</th>
                 <th>Transform</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td>text/display/2xl</td><td><a class="font-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Plus Jakarta Sans</a></td><td>96px</td><td>700</td><td>font/size/8xl</td><td></td></tr>
-              <tr><td>text/display/xl</td><td><a class="font-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Plus Jakarta Sans</a></td><td>72px</td><td>500</td><td>font/size/7xl</td><td></td></tr>
-              <tr><td>text/display/lg</td><td><a class="font-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Plus Jakarta Sans</a></td><td>60px</td><td>500</td><td>font/size/6xl</td><td></td></tr>
-              <tr><td>text/heading/h1</td><td><a class="font-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Plus Jakarta Sans</a></td><td>48px</td><td>600</td><td>font/size/5xl</td><td></td></tr>
-              <tr><td>text/heading/h2</td><td><a class="font-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Plus Jakarta Sans</a></td><td>36px</td><td>600</td><td>font/size/4xl</td><td></td></tr>
-              <tr><td>text/heading/h3</td><td><a class="font-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Plus Jakarta Sans</a></td><td>30px</td><td>600</td><td>font/size/3xl</td><td></td></tr>
-              <tr><td>text/heading/h4</td><td><a class="font-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Plus Jakarta Sans</a></td><td>24px</td><td>600</td><td>font/size/2xl</td><td></td></tr>
-              <tr><td>text/heading/h5</td><td><a class="font-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Plus Jakarta Sans</a></td><td>20px</td><td>600</td><td>font/size/xl</td><td></td></tr>
-              <tr><td>text/heading/h6</td><td><a class="font-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Plus Jakarta Sans</a></td><td>18px</td><td>600</td><td>font/size/lg</td><td></td></tr>
-              <tr><td>text/body/xl</td><td><a class="font-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Plus Jakarta Sans</a></td><td>20px</td><td>400</td><td>font/size/xl</td><td></td></tr>
-              <tr><td>text/body/lg</td><td><a class="font-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Plus Jakarta Sans</a></td><td>18px</td><td>400</td><td>font/size/lg</td><td></td></tr>
-              <tr><td>text/body/md</td><td><a class="font-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Plus Jakarta Sans</a></td><td>16px</td><td>400</td><td>font/size/md</td><td></td></tr>
-              <tr><td>text/body/sm</td><td><a class="font-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Plus Jakarta Sans</a></td><td>14px</td><td>400</td><td>font/size/sm</td><td></td></tr>
-              <tr><td>text/label/lg</td><td><a class="font-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Plus Jakarta Sans</a></td><td>16px</td><td>600</td><td>font/size/md</td><td></td></tr>
-              <tr><td>text/label/md</td><td><a class="font-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Plus Jakarta Sans</a></td><td>14px</td><td>600</td><td>font/size/sm</td><td></td></tr>
-              <tr><td>text/label/sm</td><td><a class="font-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Plus Jakarta Sans</a></td><td>12px</td><td>600</td><td>font/size/xs</td><td></td></tr>
-              <tr><td>text/caption/md</td><td><a class="font-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Plus Jakarta Sans</a></td><td>12px</td><td>400</td><td>font/size/xs</td><td></td></tr>
-              <tr><td>text/caption/sm</td><td><a class="font-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Plus Jakarta Sans</a></td><td>10px</td><td>400</td><td>font/size/2xs</td><td></td></tr>
-              <tr><td>text/overline</td><td><a class="font-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Plus Jakarta Sans</a></td><td>12px</td><td>600</td><td>font/size/xs</td><td>uppercase</td></tr>
-              <tr><td>text/code/md</td><td><a class="font-link" href="https://fonts.google.com/specimen/JetBrains+Mono" target="_blank" rel="noopener noreferrer">JetBrains Mono</a></td><td>14px</td><td>400</td><td>font/size/sm</td><td></td></tr>
+              <tr><td>text/display/2xl</td><td><a class="font-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Plus Jakarta Sans</a></td><td>96px</td><td>700</td><td></td></tr>
+              <tr><td>text/display/xl</td><td><a class="font-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Plus Jakarta Sans</a></td><td>72px</td><td>500</td><td></td></tr>
+              <tr><td>text/display/lg</td><td><a class="font-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Plus Jakarta Sans</a></td><td>60px</td><td>500</td><td></td></tr>
+              <tr><td>text/heading/h1</td><td><a class="font-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Plus Jakarta Sans</a></td><td>48px</td><td>600</td><td></td></tr>
+              <tr><td>text/heading/h2</td><td><a class="font-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Plus Jakarta Sans</a></td><td>36px</td><td>600</td><td></td></tr>
+              <tr><td>text/heading/h3</td><td><a class="font-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Plus Jakarta Sans</a></td><td>30px</td><td>600</td><td></td></tr>
+              <tr><td>text/heading/h4</td><td><a class="font-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Plus Jakarta Sans</a></td><td>24px</td><td>600</td><td></td></tr>
+              <tr><td>text/heading/h5</td><td><a class="font-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Plus Jakarta Sans</a></td><td>20px</td><td>600</td><td></td></tr>
+              <tr><td>text/heading/h6</td><td><a class="font-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Plus Jakarta Sans</a></td><td>18px</td><td>600</td><td></td></tr>
+              <tr><td>text/body/xl</td><td><a class="font-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Plus Jakarta Sans</a></td><td>20px</td><td>400</td><td></td></tr>
+              <tr><td>text/body/lg</td><td><a class="font-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Plus Jakarta Sans</a></td><td>18px</td><td>400</td><td></td></tr>
+              <tr><td>text/body/md</td><td><a class="font-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Plus Jakarta Sans</a></td><td>16px</td><td>400</td><td></td></tr>
+              <tr><td>text/body/sm</td><td><a class="font-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Plus Jakarta Sans</a></td><td>14px</td><td>400</td><td></td></tr>
+              <tr><td>text/label/lg</td><td><a class="font-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Plus Jakarta Sans</a></td><td>16px</td><td>600</td><td></td></tr>
+              <tr><td>text/label/md</td><td><a class="font-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Plus Jakarta Sans</a></td><td>14px</td><td>600</td><td></td></tr>
+              <tr><td>text/label/sm</td><td><a class="font-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Plus Jakarta Sans</a></td><td>12px</td><td>600</td><td></td></tr>
+              <tr><td>text/caption/md</td><td><a class="font-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Plus Jakarta Sans</a></td><td>12px</td><td>400</td><td></td></tr>
+              <tr><td>text/caption/sm</td><td><a class="font-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Plus Jakarta Sans</a></td><td>10px</td><td>400</td><td></td></tr>
+              <tr><td>text/overline</td><td><a class="font-link" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans?preview.script=Latn" target="_blank" rel="noopener noreferrer">Plus Jakarta Sans</a></td><td>12px</td><td>600</td><td>uppercase</td></tr>
+              <tr><td>text/code/md</td><td><a class="font-link" href="https://fonts.google.com/specimen/JetBrains+Mono" target="_blank" rel="noopener noreferrer">JetBrains Mono</a></td><td>14px</td><td>400</td><td></td></tr>
             </tbody>
           </table>
         </div>
