@@ -654,36 +654,40 @@
 
     .font-specimen-grid {
       display: grid;
-      gap: 24px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      border: 0.5px solid var(--color-line);
+      background: var(--color-line);
     }
 
     .font-specimen {
-      border: 0.5px solid var(--color-line);
       background: #11100d;
-      padding: 56px 60px 48px;
+      min-width: 0;
+      padding: 32px 28px;
       color: var(--color-text);
     }
 
     .font-specimen-meta {
-      margin-bottom: 72px;
+      margin-bottom: 36px;
       color: var(--color-text-45);
-      font-size: 18px;
+      font-size: 13px;
       font-weight: 500;
-      line-height: 26px;
+      line-height: 18px;
     }
 
     .font-specimen-name {
-      margin-bottom: 64px;
+      min-height: 56px;
+      margin-bottom: 32px;
       color: var(--color-text-55);
-      font-size: 28px;
+      font-size: 22px;
       font-weight: 400;
-      line-height: 36px;
+      line-height: 28px;
     }
 
     .font-specimen-glyph {
-      margin-bottom: 64px;
+      margin-bottom: 36px;
       color: var(--color-text);
-      font-size: 132px;
+      font-size: 88px;
       font-weight: 700;
       line-height: 0.8;
       letter-spacing: -0.04em;
@@ -691,19 +695,19 @@
 
     .font-specimen-charset {
       display: grid;
-      gap: 8px;
-      margin-bottom: 72px;
+      gap: 4px;
+      margin-bottom: 40px;
       color: var(--color-text);
-      font-size: 28px;
+      font-size: 16px;
       font-weight: 400;
-      line-height: 38px;
+      line-height: 24px;
       letter-spacing: -0.02em;
     }
 
     .font-specimen-link {
       color: var(--color-text-45);
-      font-size: 28px;
-      line-height: 36px;
+      font-size: 18px;
+      line-height: 26px;
       text-decoration: none;
     }
 
